@@ -5,12 +5,19 @@ To apply fundamental image processing techniques on a sample image using MATLAB,
 
 ## Procedure:
 i.   A sample image was loaded using MATLAB's "imread" function.
+
 ii.  The image was resized to 256x256 pixels using "imresize".
+
 iii. The color image was converted to grayscale using "rgb2gray".
+
 iv.  A Gaussian blur was applied using "imgaussfilt" to reduce noise.
+
 v.   Sharpening was applied to enhance edges using "imsharpen".
+
 vi.  Histogram equalization was performed with "histeq" to improve contrast.
+
 vii. The grayscale image was binarized using "imbinarize".
+
 viii.Connected regions were labeled using "bwlabel", and the regions were visualized with "label2rgb".
 
 ## Results:
