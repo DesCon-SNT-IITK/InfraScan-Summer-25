@@ -22,7 +22,9 @@ viii.Connected regions were labeled using "bwlabel", and the regions were visual
 
 ## Results:
 The following results were obtained:
-Number of connected regions: 
+
+Number of connected regions: Detected regions indicate distinct connected structures.
+
 Visual representations of each stage are shown in the figures.
 
 ## Conclusion:
