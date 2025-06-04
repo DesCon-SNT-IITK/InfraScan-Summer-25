@@ -1,0 +1,18 @@
+Our task is to perform basic image processing operations like resizing, conversion to grayscale, Gaussian blur, sharpening, histogram equalization, binarization, and labeling connected regions using MATLAB.
+Steps of doing this:
+
+-loading a sample image.
+
+-Resizing it to 256x256 pixels.
+
+-Converting to grayscale.
+
+-Applying Gaussian blur to reduce noise.
+
+-using image sharpening.
+
+-histogram equalization to improve contrast.
+
+-Binarizing the image for object-background segmentation.
+
+-Labelling connected components to identify separate object
