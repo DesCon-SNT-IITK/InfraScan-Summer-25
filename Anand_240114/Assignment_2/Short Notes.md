@@ -10,4 +10,4 @@
 7. Then binarise the image formed in step 6.
 8. Now labeled the binarised image.
 9. AT last ,I saved all the images.
-##Conclusion-: hence we have learnedto use image processing tool
+ ## Conclusion-: hence we have learnedto use image processing tool
