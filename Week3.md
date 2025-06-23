@@ -1,4 +1,4 @@
-# Week 3: Introduction to Deep Learning
+# Week 3&4: Introduction to Deep Learning
 
 ## 1. Introduction to Deep Learning
 - (https://youtu.be/dccdadl90vs?si=MOwzWIZ-4frz3G8b)
