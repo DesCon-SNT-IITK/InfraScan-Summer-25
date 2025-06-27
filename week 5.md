@@ -1,65 +1,51 @@
 
-# Week 5: Midterm + Dataset Collection & Preprocessing
+# 📅 Week 5: Dataset Collection & Preprocessing
 
 **Project**: InfraScan – AI-Powered Structural Health Monitoring  
 **Organized by**: DesCon Society, IIT Kanpur
 
----
+## 2️⃣ Dataset Collection
 
-## 🎯 Goals of Week 5
-- Midterm evaluation of mentees' progress
-- Learn how to gather and prepare infrared image datasets
-- Understand and apply advanced preprocessing techniques
-- Begin organizing annotated data for supervised learning models
+### 🌐 Suggested Sources:
+- [FLIR Thermal Dataset](https://www.flir.com/oem/adas/adas-dataset-form/)
+- [Kaggle: Crack Detection Datasets](https://www.kaggle.com/search?q=crack+infrared+image)
+- [Roboflow Public Datasets](https://public.roboflow.com)
+- [GitHub Search: Infrared Dataset](https://github.com/search?q=infrared+thermal+image+dataset)
+- [ImageNet](https://image-net.org)
 
----
-
-## 🧪 Mid-Term Evaluation Guidelines
-
-### 📊 Mentees must:
-1. Demonstrate basic MATLAB proficiency (Week 1–2 concepts)
-2. Present image processing tasks done on sample images
-3. Submit a short presentation/report showing:
-   - Processed images
-   - Summary of learning
-   - Explanation of each transformation
+> Download at least **20–30 images** that include visible cracks, moisture damage, or structural defects.
 
 ---
 
-## 📦 1. Dataset Collection: Infrared Images
+## 3️⃣ Image Annotation
 
-### 🔍 Where to Find Infrared Datasets:
-- **Open Access IR Datasets**
-  - [FLIR Thermal Dataset](https://www.flir.com/oem/adas/adas-dataset-form/)
-  - [Kaggle Infrared Datasets](https://www.kaggle.com/search?q=infrared+thermal+images)
-  - [ImageNet Subsets](https://www.image-net.org/)
-  - [Roboflow Datasets](https://public.roboflow.com)
-  - [NASA Thermal Infrared Data](https://pmm.nasa.gov/data-access)
+### ✅ Tool: [https://www.makesense.ai](https://www.makesense.ai)
 
-### 📌 Dataset Criteria:
-- Prefer `.png`, `.jpg`, `.bmp` formats
-- Look for datasets with crack/moisture/thermal damage
-- Download at least 15–20 images per category for testing
+### 🧭 Steps:
+1. Go to the website and **“Get Started”**
+2. Upload your selected infrared or crack images
+3. Choose **Object Detection** as the task
+4. Create labels: `crack`, `moisture`, `defect`, etc.
+5. Draw bounding boxes around damage regions
+6. Export annotations in **YOLO (TXT)** or **VOC (XML)** format
 
----
-
-## 📝 2. Manual Image Annotation
-
-Use the free online tool: [https://www.makesense.ai](https://www.makesense.ai)
-
-### Steps:
-1. Upload infrared image
-2. Draw bounding boxes around regions (cracks, wet areas)
-3. Export annotations in YOLO or VOC format (for future DL use)
+### 📁 Output Folder Example:
+```
+/annotations
+  ├── image1.jpg
+  ├── image1.txt (or image1.xml)
+  ├── image2.jpg
+  └── image2.txt
+```
 
 ---
 
-## 🔧 3. Preprocessing Techniques (Advanced)
+## 4️⃣ Advanced Preprocessing in MATLAB
 
-### Technique 1: Gaussian + Median Filtering
+### ▶️ Step A: Gaussian + Median Filtering
 
 ```matlab
-img = imread('infrared_sample.png');
+img = imread('infrared_sample.jpg');
 gray = rgb2gray(img);
 gauss = imgaussfilt(gray, 2);
 medianFiltered = medfilt2(gauss);
@@ -71,25 +57,25 @@ subplot(1,3,3), imshow(medianFiltered), title('Median + Gaussian');
 
 ---
 
-### Technique 2: Histogram Equalization
+### ▶️ Step B: Histogram Equalization
 
 ```matlab
 equalized = histeq(medianFiltered);
-figure; imshow(equalized); title('Histogram Equalized');
+imshow(equalized); title('Histogram Equalized Image');
 ```
 
 ---
 
-### Technique 3: Adaptive Thresholding
+### ▶️ Step C: Adaptive Binarization
 
 ```matlab
 binary = imbinarize(equalized, 'adaptive', 'Sensitivity', 0.6);
-figure; imshow(binary); title('Binarized Image');
+imshow(binary); title('Binarized Image');
 ```
 
 ---
 
-### Technique 4: Image Normalization
+### ▶️ Step D: Normalization
 
 ```matlab
 normImg = mat2gray(double(equalized));
@@ -98,40 +84,43 @@ imshow(normImg); title('Normalized Image');
 
 ---
 
-## 🧩 Week 5 Assignment
+## 5️⃣ Week 5 Assignment
 
-### 🔧 Task:
-- Choose 5 images (infrared or structural)
-- Apply the following:
+### 🧪 Tasks:
+- Choose **5 infrared or crack images**
+- Apply:
   - Grayscale conversion
   - Gaussian + Median filtering
-  - Histogram equalization
-  - Adaptive binarization
-  - Save each output
-- Annotate 2 images using makesense.ai
+  - Histogram Equalization
+  - Adaptive Thresholding
+  - Normalization
+- Annotate at least **2 images** using [makesense.ai](https://www.makesense.ai)
 
-### 📄 Report:
-- Include screenshots of preprocessing results
-- List 3–5 observations (e.g., noise removed, defects highlighted, etc.)
+### 📄 Submit:
+- MATLAB `.m` file
+- Preprocessed output images
+- Annotation files (`.txt` or `.xml`)
+- Short report (150–200 words):
+  - Steps used
+  - Observations (contrast, noise reduction, etc.)
 
 ---
 
 ## 📚 Resources
 
-### Tools:
 - [MakeSense AI Annotator](https://www.makesense.ai)
 - [MATLAB Image Processing Toolbox Docs](https://www.mathworks.com/help/images/)
-- [MATLAB Image Processing Onramp](https://matlabacademy.mathworks.com/details/image-processing-onramp/getting-started)
+- [Image Processing Onramp by MathWorks](https://matlabacademy.mathworks.com/details/image-processing-onramp/getting-started)
+- [YouTube: MATLAB Image Preprocessing](https://www.youtube.com/watch?v=Q59sN8n2wJk)
 
 ---
 
-## 🧠 InfraScan Relevance
+## 🧠 Why This Matters
 
-- Preprocessing is essential for better feature extraction
-- Annotated images will be used for CNN training in later weeks
-- Clean, normalized, and consistent data improves model accuracy
+- Preprocessing ensures cleaner and more usable data for AI
+- Annotated images will help train your crack/moisture detection model in Week 6
+- Week 5 bridges your learning phase to actual project development
 
 ---
 
 _End of Week 5 Resources_
-
