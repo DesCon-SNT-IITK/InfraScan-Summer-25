@@ -110,15 +110,14 @@ imshow(normImg); title('Normalized Image');
 
 - [MakeSense AI Annotator](https://www.makesense.ai)
 - [MATLAB Image Processing Toolbox Docs](https://www.mathworks.com/help/images/)
-- [Image Processing Onramp by MathWorks](https://matlabacademy.mathworks.com/details/image-processing-onramp/getting-started)
-- [YouTube: MATLAB Image Preprocessing](https://www.youtube.com/watch?v=Q59sN8n2wJk)
+- [Image Processing Onramp by MathWorks](https://matlabacademy.mathworks.com/details/image-processing-onramp/imageprocessing#module=4)
 
 ---
 
 ## 🧠 Why This Matters
 
 - Preprocessing ensures cleaner and more usable data for AI
-- Annotated images will help train your crack/moisture detection model in Week 6
+- Annotated images will help train your crack/moisture detection(CNN) model in Week 6
 - Week 5 bridges your learning phase to actual project development
 
 ---
