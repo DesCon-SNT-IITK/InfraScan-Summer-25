@@ -1,0 +1,21 @@
+%Advanced Preprocessing in MATLAB
+
+%A: Gaussian + Median Filtering
+close all; clc; clear all;
+img = imread('1.jpg');
+gray = rgb2gray(img);
+gauss = imgaussfilt(gray, 2);
+medianFiltered = medfilt2(gauss);
+
+subplot(1,3,1), imshow(img), title('Original');
+subplot(1,3,2), imshow(gauss), title('Gaussian Filter');
+subplot(1,3,3), imshow(medianFiltered), title('Median + Gaussian');
+ %B: Histogram Equalization
+equalized = histeq(medianFiltered);
+imshow(equalized); title('Histogram Equalized Image');
+▶️ Step C: Adaptive Binarization
+binary = imbinarize(equalized, 'adaptive', 'Sensitivity', 0.6);
+imshow(binary); title('Binarized Image');
+▶️ Step D: Normalization
+normImg = mat2gray(double(equalized));
+imshow(normImg); title('Normalized Image');
