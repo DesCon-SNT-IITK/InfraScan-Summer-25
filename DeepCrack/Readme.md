@@ -1,8 +1,3 @@
-# 🧠 DeepCrack Segmentation Project
-
-Welcome to the DeepCrack model pipeline! 🚧 This project uses deep learning (specifically, a U-Net architecture) to automatically detect cracks in roads or pavement images. Here's a complete walkthrough of what we’re doing and how it works — made simple for you! 👇
-
----
 
 ## 📁 Folder Structure
 
@@ -112,13 +107,3 @@ load('trainedModel.mat');
 ```
 
 ---
-
-## 👨‍🏫 Final Notes for Mentees
-
-- Feel free to play with the image size or U-Net layers
-- Try visualizing the intermediate feature maps (bonus!)
-- Understand each line of code – ask questions anytime! 🙌
-
----
-
-Happy cracking! 😄
