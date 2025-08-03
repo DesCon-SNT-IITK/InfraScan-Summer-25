@@ -16,6 +16,8 @@ function evaluateDeepCrack()
     totalPix=0;
     
     disp('Evaluating accuracy of the model...');
+    disp('It will take about 10-15 mins...');
+    
     for i=1:l
         img = imread(fullfile(outputTestImgDir,files(i).name));
         mask = imread(fullfile(outputTestMaskDir,replace(files(i).name, '.jpg', '.png')));
@@ -26,7 +28,7 @@ function evaluateDeepCrack()
         imwrite(predNumMask,fullfile(predMaskDir,files(i).name));
 
         samePix = sum(sum(mask==predNumMask));
-        fprintf("%f\n",samePix/(256*256)*100)
+        % fprintf("%f\n",samePix/(256*256)*100)
         totalPix=totalPix+samePix;
     end
     
